@@ -20,7 +20,7 @@ def columns(rows, columns):
 
 
 @app.route('/<int:rows>/<int:columns>/<string:color_1>/', methods=['GET'])
-def color(rows, columns, color_1):
+def colors(rows, columns, color_1):
     return render_template("index.html", rows=rows, cols=columns, color_1=color_1, color_2="red")
 
 
