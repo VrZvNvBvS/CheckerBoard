@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CheckerBoard</title>
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename='css/style.css')}}"
+    />
+  </head>
+
+  <body>
+    <h1 style="background-color:{{color_1}};color:{{color_2}};">
+      ***CheckerBoard***
+    </h1>
+
+    <main class="container">
+      {% for index in range(0,rows) %}
+      <div class="row">
+        {% for j in range(0,cols) %}
+        <div
+          class="square"
+          style="background-color:{% if (index+j) is even %}{{color_1}};{% else %}{{color_2}};{% endif %}"
+        ></div>
+        {% endfor %}
+      </div>
+      {% endfor %}
+    </main>
+  </body>
+</html>
